@@ -1,0 +1,55 @@
+.btnCart{
+    border: 1px green solid;
+    border-radius: 15px;
+    text-decoration: none;
+    color: green;
+    size: 10px;
+    padding: 10px;
+    margin: 40px 0px 10px 0px;
+    
+}
+.btnCart:hover{
+    border: 1px green solid;
+    border-radius: 15px;
+    background-color: green;
+    color: aliceblue;
+    text-decoration: none;
+    
+}
+.row{
+    margin-left: 22px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 
+    repeat(4, 1fr);
+    gap: 25px;
+}
+.card-body{
+    margin: 10px;
+}
+.card-title{
+    font-weight: bold;
+    padding-top: 15px;
+}
+.navbar-brand{
+    margin-right: 1.5rem;
+    font-weight: bold;
+    color: green;
+    margin: 10px;
+}
+.welcome{
+    margin: 0px 0px 50px 35px;
+}
+.icon{
+    /* margin: 0px 20px 0px 850px; */
+    /* padding-left: 80px; */
+    display: inline-flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 20px;
+  float: right; 
+
+}
+.nav-text{
+    font-weight: bold;
+}
