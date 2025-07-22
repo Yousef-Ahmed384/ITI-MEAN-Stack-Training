@@ -5,11 +5,12 @@ import { CurrencyPipe } from '@angular/common';
 import { RatingStarsPipe } from './rating-stars-pipe';
 import { RatingcomponentPipe } from './ratingcomponent-pipe';
 import { RatingComponent } from './rating-component/rating-component';
+import { NavBar } from './nav-bar/nav-bar';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CurrencyPipe, RatingComponent, RatingStarsPipe],
+  imports: [RouterOutlet, CurrencyPipe, RatingComponent, RatingStarsPipe, NavBar],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

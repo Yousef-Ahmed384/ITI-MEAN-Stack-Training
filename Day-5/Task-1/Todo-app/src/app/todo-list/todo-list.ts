@@ -11,6 +11,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './todo-list.css'
 })
 export class TodoList {
-  @Input() receivedData: string = '';
+  @Input() messageFromParent!: string;
 
 }

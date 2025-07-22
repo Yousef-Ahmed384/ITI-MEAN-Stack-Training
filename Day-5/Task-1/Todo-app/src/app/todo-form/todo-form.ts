@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 @Component({
@@ -7,20 +7,19 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, FormsModule],
   templateUrl: './todo-form.html',
   template: `
-  <input type="text" [(ngModel)]="inputData" placeholder="Enter data">
+  <!-- <input type="text" [(ngModel)]="inputData" placeholder="Enter data"> -->
     <button (click)="addData()">Add</button>
     `, 
   styleUrl: './todo-form.css'
 })
 export class TodoForm {
-    @Output() dataAdded = new EventEmitter<string>();
-  inputData: string = '';
+  @Input() inputData: string | undefined 
 
-  addData() {
-    if (this.inputData.trim()) {
-      this.dataAdded.emit(this.inputData);
-      this.inputData = ''; // Clear the input after adding
-    }
+  @Output() messageToParent = new EventEmitter<string>()
+
+  sendMessage(inputData : string){
+    this.messageToParent.emit(this.inputData)
   }
+    
 
 }
