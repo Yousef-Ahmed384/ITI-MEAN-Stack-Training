@@ -6,7 +6,7 @@
   </div>
   <div class="mb-3">
     <h6 class="form-label">Add New Todo</h6>
-    <input type="text" class="form-control" placeholder="Enter new Task" >
+    <input [(ngModel)]="childInput" name="childInput" type="text" class="form-control" placeholder="Enter new Task" >
   </div>
-  <button type="submit" class="btn btn-light" class="btn">Add</button>
+  <button (click)="sendData()" type="submit" class="btn btn-light" class="btn">Add</button>
 </form>

@@ -1,0 +1,22 @@
+<div class="product-container">
+<div class="item-image">
+    <img [src]="selectedProduct.thumbnail"  alt="...">
+</div>
+<div class="item-details">
+    <h4>{{selectedProduct.title}}</h4>
+    <br>
+    <br>
+    <h5><strong>Price:</strong> {{selectedProduct.price | currency:'EGP':'symbol'}}</h5>
+    <br>
+    <p><strong>Discount: </strong>{{selectedProduct.discountPercentage}}%</p>
+    <h6>Category: {{selectedProduct.category}}</h6>
+    <br>
+    <strong>Description: </strong>
+    <br>
+    <p>{{selectedProduct.description}}</p>
+    <br>
+    <p><strong>Rating: </strong>{{selectedProduct.rating}}</p>
+
+
+</div>
+</div>

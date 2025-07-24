@@ -1,25 +1,5 @@
+<div>
 <app-nav-bar></app-nav-bar>
-<div class="welcome">
-  <h5>Welcome to out shopping website, start browsing...</h5>
-</div>
 
-
-<div class="row">
-  @for (item of products; track $index) {
-    <div class="">
-    <div class="card h-100 shadow-sm">
-       <img [src]="item.images" class="card-img-top" alt="...">
-       <div class="card-body">
-          <h5 class="card-title">{{item.title}}</h5>
-          <span>{{item.price |  currency:'EGP':'symbol'}}</span>
-          <p class="card-text">{{item.description}}</p>
-          <app-rating-component
-            [receivedRating]="item.rating"
-            (messageToParent)="showMessage($event)"
-          ></app-rating-component>
-          <a href="#" class="btn btn-light" class="btnCart">Add to Cart</a>
-        </div>
-      </div>
-    </div>
-  }
+<router-outlet></router-outlet>
 </div>

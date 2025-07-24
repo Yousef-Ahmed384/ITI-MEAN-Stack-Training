@@ -1,0 +1,37 @@
+<div class="welcome">
+  <h5>Welcome to out shopping website, start browsing...</h5>
+</div>
+
+
+<div class="row">
+  @for (item of products; track $index) {
+    <div class="">
+      <div class="card h-100 shadow-sm"> 
+      <a [routerLink]="['/details', item.id]" class="cardLink">
+       <img [src]="item.thumbnail" class="card-img-top" alt="...">
+       <div class="badge">
+       @if (item.stock > 0) {
+        <span class="stock" class="badge rounded-pill text-bg-success">In Stock</span>
+       }
+       @else {
+        <span class="stock" class="badge rounded-pill text-bg-danger">Out of Stock</span>
+       }
+       </div>
+       <div class="card-body">
+        <div class="title">
+          <h5 class="card-title">{{item.title}}</h5>
+          <h6 class="price">{{item.price |  currency:'EGP':'symbol'}}</h6>
+          </div>
+          <p class="card-text">{{item.description}}</p>
+          <app-rating-component 
+           [receivedRating]="item.rating"
+            (messageToParent)="showMessage($event)"
+            
+            ></app-rating-component>
+          <a  href="#" class="btn btn-light" class="btnCart">Add to Cart</a>
+        </div>
+      </a>
+      </div>
+    </div>
+  }
+</div>

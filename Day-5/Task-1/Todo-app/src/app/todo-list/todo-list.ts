@@ -1,16 +1,16 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TodoForm } from '../todo-form/todo-form';
+import { Todo } from '../app';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-todo-list',
-   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TodoForm, FormsModule],
   templateUrl: './todo-list.html',
-  template: `
-    <p>Received Data: {{ receivedData }}</p>
-    `,
   styleUrl: './todo-list.css'
 })
 export class TodoList {
-  @Input() messageFromParent!: string;
+  @Input() element !: string
+
 
 }

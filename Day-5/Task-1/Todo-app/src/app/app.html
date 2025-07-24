@@ -1,2 +1,2 @@
-<app-todo-form></app-todo-form>
-<app-todo-list messageFromParent="showData($event)"></app-todo-list>
+<app-todo-form (dataEmitter)="handleData($event)"></app-todo-form>
+<app-todo-list [element]="receivedData">  </app-todo-list>
