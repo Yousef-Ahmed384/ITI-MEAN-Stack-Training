@@ -1,0 +1,175 @@
+<style>
+  .portfolio {
+    background: #f8f8f8;
+    padding: 80px 0;
+  }
+
+  .portfolio-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .portfolio h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+  }
+
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .portfolio-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover .portfolio-image img {
+    transform: scale(1.1);
+  }
+
+  .portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 30px 20px 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+  }
+
+  .portfolio-overlay h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+  }
+
+  .portfolio-overlay p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .portfolio {
+      padding: 60px 0;
+    }
+    
+    .portfolio h2 {
+      font-size: 2rem;
+    }
+    
+    .portfolio-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+</style>
+
+<section class="portfolio">
+  <div class="portfolio-content">
+    <h2>Portfolio</h2>
+    
+    <div class="portfolio-grid">
+      <div class="portfolio-item" onclick="openProject('web-design')">
+        <div class="portfolio-image">
+          <img src="https://images.app.goo.gl/H1gZzrhCcSv9dFqX9" alt="Web Design">
+        </div>
+        <div class="portfolio-overlay">
+          <h3>WEB DESIGN</h3>
+          <p>Modern responsive web design project</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item" onclick="openProject('mobile-design')">
+        <div class="portfolio-image">
+          <img src="assets/portfolio-2.jpg" alt="Mobile Design">
+        </div>
+        <div class="portfolio-overlay">
+          <h3>MOBILE DESIGN</h3>
+          <p>Mobile application UI/UX design</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item" onclick="openProject('logo-design')">
+        <div class="portfolio-image">
+          <img src="assets/portfolio-3.jpg" alt="Logo Design">
+        </div>
+        <div class="portfolio-overlay">
+          <h3>LOGO DESIGN</h3>
+          <p>Corporate logo and brand identity</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item" onclick="openProject('web-app')">
+        <div class="portfolio-image">
+          <img src="https://images.app.goo.gl/PpVa1oyJhzoi9oAm7" alt="Web Application">
+        </div>
+        <div class="portfolio-overlay">
+          <h3>WEB APPLICATION DEVELOPMENT</h3>
+          <p>Full-stack web application</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item" onclick="openProject('mobile-app')">
+        <div class="portfolio-image">
+          <img src="assets/portfolio-5.jpg" alt="Mobile Application">
+        </div>
+        <div class="portfolio-overlay">
+          <h3>MOBILE APPLICATION DEVELOPMENT</h3>
+          <p>Cross-platform mobile app</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item" onclick="openProject('ecommerce')">
+        <div class="portfolio-image">
+          <img src="assets/portfolio-6.jpg" alt="E-commerce">
+        </div>
+        <div class="portfolio-overlay">
+          <h3>E-COMMERCE DEVELOPMENT</h3>
+          <p>Online shopping platform</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function openProject(projectId) {
+    console.log('Opening project:', projectId);
+    // You can add modal or navigation logic here
+    alert('Opening project: ' + projectId);
+  }
+</script>

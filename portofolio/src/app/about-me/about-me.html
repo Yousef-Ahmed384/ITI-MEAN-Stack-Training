@@ -1,0 +1,77 @@
+<style>
+  .about {
+    background: #f8f8f8;
+    padding: 80px 0;
+  }
+
+  .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .about h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 300;
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+  }
+
+  .download-cv {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .download-cv:hover {
+    background: #555;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .about {
+      padding: 60px 0;
+    }
+    
+    .about h2 {
+      font-size: 2rem;
+    }
+    
+    .about-text {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<section class="about">
+  <div class="about-content">
+    <h2>About me</h2>
+    <p class="about-text">
+      I have been active in the web development field for over 5 years, specializing in modern web technologies and user experience design. My expertise spans across front-end development, responsive design, and creating intuitive digital experiences. I'm passionate about crafting clean, efficient code and bringing creative visions to life through technology.
+    </p>
+    <button class="download-cv" onclick="downloadCV()">Download CV</button>
+  </div>
+</section>
+
+<script>
+  function downloadCV() {
+    const link = document.createElement('a');
+    link.href = 'assets/katie-reed-cv.pdf';
+    link.download = 'Katie_Reed_CV.pdf';
+    link.click();
+  }
+</script>

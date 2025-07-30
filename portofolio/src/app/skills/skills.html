@@ -1,0 +1,169 @@
+<style>
+  .skills {
+    background: #4a4a4a;
+    color: white;
+    padding: 80px 0;
+  }
+
+  .skills-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .skills h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  .skills-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 50px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skills-grid {
+    display: grid;
+    gap: 25px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .skill-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .skill-name {
+    min-width: 140px;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .skill-bar {
+    flex: 1;
+    height: 8px;
+    background: #666;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .skill-progress {
+    height: 100%;
+    background: #fff;
+    border-radius: 4px;
+    transition: width 2s ease-in-out;
+  }
+
+  .skill-progress-90 { width: 90%; }
+  .skill-progress-85 { width: 85%; }
+  .skill-progress-95 { width: 95%; }
+  .skill-progress-80 { width: 80%; }
+  .skill-progress-75 { width: 75%; }
+  .skill-progress-70 { width: 70%; }
+
+  @media (max-width: 768px) {
+    .skills {
+      padding: 60px 0;
+    }
+    
+    .skills h2 {
+      font-size: 2rem;
+    }
+    
+    .skill-item {
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .skill-name {
+      min-width: auto;
+      align-self: flex-start;
+    }
+  }
+</style>
+
+<section class="skills">
+  <div class="skills-content">
+    <h2>Skills</h2>
+    <p class="skills-intro">
+      I specialize in front-end development with expertise in modern frameworks and technologies. My skill set includes responsive design, user interface development, and creating seamless user experiences across all devices.
+    </p>
+    
+    <div class="skills-grid">
+      <div class="skill-item">
+        <span class="skill-name">UI Design</span>
+        <div class="skill-bar">
+          <div class="skill-progress skill-progress-90"></div>
+        </div>
+      </div>
+      
+      <div class="skill-item">
+        <span class="skill-name">UX/UI Design</span>
+        <div class="skill-bar">
+          <div class="skill-progress skill-progress-85"></div>
+        </div>
+      </div>
+      
+      <div class="skill-item">
+        <span class="skill-name">Web Design</span>
+        <div class="skill-bar">
+          <div class="skill-progress skill-progress-95"></div>
+        </div>
+      </div>
+      
+      <div class="skill-item">
+        <span class="skill-name">App Design</span>
+        <div class="skill-bar">
+          <div class="skill-progress skill-progress-80"></div>
+        </div>
+      </div>
+      
+      <div class="skill-item">
+        <span class="skill-name">Graphic Design</span>
+        <div class="skill-bar">
+          <div class="skill-progress skill-progress-75"></div>
+        </div>
+      </div>
+      
+      <div class="skill-item">
+        <span class="skill-name">Motion Graphics</span>
+        <div class="skill-bar">
+          <div class="skill-progress skill-progress-70"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Animate skill bars on scroll
+  window.addEventListener('scroll', function() {
+    const skillsSection = document.querySelector('.skills');
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    if (isElementInViewport(skillsSection)) {
+      skillBars.forEach(bar => {
+        bar.style.animationDelay = Math.random() * 0.5 + 's';
+      });
+    }
+  });
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+</script>
