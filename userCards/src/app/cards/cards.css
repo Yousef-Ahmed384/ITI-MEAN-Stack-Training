@@ -1,0 +1,59 @@
+.users{
+    margin-left: 30px;
+    margin-top: 30px;
+}
+span{
+    padding-top: 10px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    width: 80px;
+    height: 20px;
+    left: 35%;
+    border-radius: 10px;
+    color: white;
+
+  }
+.img-div{
+  width: 160px;
+  height: 160px;
+  border: 4px solid cadetblue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
+}
+.circle-img{
+  width: 155px;
+  height: 160px;
+  border-radius: 90%;
+  object-fit: cover;
+  margin-right: 20px;
+  display: inline-block;
+  padding-left: 30px;
+
+}
+.search-div{
+  justify-content: center;
+  text-align: center;
+
+}
+input{
+  width: 30%;
+  padding: 10px;
+  border: solid;
+  margin: 1.5rem 4px;
+  border-radius: 3px;
+  border-width: 2px;
+  font-size: 1.5rem;
+
+}
+button{
+  padding: 15px 30px 10px 20px;
+  border-radius: 10px;
+  background-color: rgb(13, 102, 102);
+  color: white;
+  font-size: larger;
+}

@@ -1,0 +1,51 @@
+<div class="container mt-5">
+  <!-- Search/Input Section -->
+  <div class="row mb-4" >
+    <div class="col-12">
+      <h1 class="users">Users</h1>
+      <div class="input-group" class="search-div">
+        <input type="text" class="form-control" placeholder="Search by Email" [(ngModel)]="searchText">
+<button class="btn btn-success btn-lg" type="button">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Cards -->
+  <div class="row" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+  @for (item of filteredUsers; track item.email) {
+
+      <div col-sm-6 col-md-4 col-lg-3 mb-3
+       style="width: 18rem; border: 4px;
+        border-color: rgb(30, 118, 115); border-radius: 50px;
+         border-style: solid; margin: 12px; padding: 15px; justify-content: center;">
+
+        <div class="card h-100 shadow-sm card-body">
+            <div class="img-div">
+              <img [src]="item.image" class="card-img-top" class="circle-img" alt="User Image" >
+            </div>
+          <div class="card-header bg-primary text-white text-center">
+            @if(item.role == "admin"){
+              <span class="badge rounded-pill text-bg-danger" style="background-color: red">Admin</span>
+
+            }
+            @else if (item.role == 'user') {
+                <span class="badge rounded-pill text-bg-primary" style="background-color: rgba(57, 157, 57, 0.789);">User</span>            }
+            @else if (item.role == 'moderator') {
+                <span class="badge rounded-pill text-bg-warning" style="background-color: rgb(217, 217, 112);">Moderator</span>            }
+          </div>
+          <div class="card-body">
+            <p class="card-text"><strong>Username:</strong> {{item.username}}</p>
+            <p class="card-text"><strong>Email:</strong> {{item.email}}</p>
+            <p class="card-text"><strong>Phone:</strong> {{item.phone}}</p>
+            <p class="card-text"><strong>Birthdate:</strong> {{item.birthDate}}</p>
+            
+          </div>
+        </div>
+      </div>
+    }
+    @empty {
+        <div class="col-12 text-center mt-5">
+            <h1>No Users Found</h1>
+        </div>
+    }
+</div>
